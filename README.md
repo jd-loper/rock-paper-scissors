@@ -1,1 +1,1 @@
-# rock-paper-scissors
+An RPS program made for The Odin Project.
