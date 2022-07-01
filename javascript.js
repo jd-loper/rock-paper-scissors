@@ -1,6 +1,6 @@
 const rpsArray = ["Rock!", "Paper!", "Scissors!"];
 
-const userInput = prompt("Rock, paper, or scissors?");
+const userInput = prompt("Rock, paper, or scissors?").toLowerCase();
 
 const randomValue = Math.floor(Math.random() * rpsArray.length);
 console.log(`Computer: ${rpsArray[randomValue]}`);
