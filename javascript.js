@@ -1,29 +1,46 @@
-function round() {
-    if (choice == "rock" && randomValue == 2) {
+function computerPlay() {
+    const rpsArray = ["Rock", "Paper", "Scissors"];
+    const randomValue = Math.floor(Math.random() * rpsArray.length);
+
+    if (randomValue == 0) {
+        return 0;
+    } else if (randomValue == 1) {
+        return 1;
+    } else if (randomValue == 2) {
+        return 2;
+    }
+}
+
+function playerPlay() {
+    let choice = prompt("Rock, paper, or scissors?").toLowerCase();
+    return choice;
+}
+
+function round(computerSelect, playerSelect) {
+    if (playerSelect == "rock" && computerSelect === 2) {
         console.log("You win! Rock beats scissors.");
-    } else if (choice == "paper" && randomValue == 0) {
+    } else if (playerSelect == "paper" && computerSelect === 0) {
         console.log("You win! Paper beats rock.");
-    } else if (choice == "scissors" && randomValue == 1) {
+    } else if (playerSelect == "scissors" && computerSelect === 1) {
         console.log("You win! Scissors beats paper.");
-    } else if (randomValue == 0 && choice == "scissors") {
+    } else if (computerSelect === 0 && playerSelect == "scissors") {
         console.log("You lose. Rock beats scissors.");
-    } else if (randomValue == 1 && choice == "rock") {
+    } else if (computerSelect === 1 && playerSelect == "rock") {
         console.log("You lose. Paper beats rock.");
-    } else if (randomValue == 2 && choice == "paper") {
+    } else if (computerSelect === 2 && playerSelect == "paper") {
         console.log("You lose. Scissors beats paper.");
-    } else if (choice == "rock" && randomValue == 0) {
+    } else if (playerSelect == "rock" && computerSelect === 0) {
         console.log("Tie!");
-    } else if (choice == "paper" && randomValue == 1) {
+    } else if (playerSelect == "paper" && computerSelect === 1) {
         console.log("Tie!");
-    } else if (choice == "scissors" && randomValue == 2) {
+    } else if (playerSelect == "scissors" && computerSelect === 2) {
         console.log("Tie!");
     } else {
         console.log("Error.");
     }
 }
 
-const rpsArray = ["Rock", "Paper", "Scissors"];
-const randomValue = Math.floor(Math.random() * rpsArray.length);
-const choice = prompt("Rock, paper, or scissors?").toLowerCase();
+const playerSelect = playerPlay();
+const computerSelect = computerPlay();
 
-round();
+round(computerSelect, playerSelect);
