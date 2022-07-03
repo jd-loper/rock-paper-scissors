@@ -5,15 +5,16 @@ for(i = 0; i < 5; i++) {
 
 let userChoice = prompt("Rock, paper, or scissors?").toUpperCase();
 if (! userChoice) {
-    console.log("Please enter a value!");
+    console.log("That's not how this game works!");
+    loss+=1;
 } else {
     console.log("Player:" + " " + userChoice);
 }
 
-let computerChoice = Math.random();
-if (computerChoice < 0.34) {
+let computerChoice = Math.ceil(Math.random() * 3);
+if (computerChoice == 1) {
     computerChoice = "ROCK";
-} else if (computerChoice <= 0.67) {
+} else if (computerChoice == 2) {
     computerChoice = "PAPER";
 } else {
     computerChoice = "SCISSORS";
