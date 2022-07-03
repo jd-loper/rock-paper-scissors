@@ -35,7 +35,7 @@ function scissors() {
     }
 }
 
-function roundOne() {
+function playRound() {
     if (userInput == "rock") {
         rock();
     } else if (userInput == "paper") {
@@ -47,4 +47,4 @@ function roundOne() {
     }
 }
 
-roundOne();
+playRound();
