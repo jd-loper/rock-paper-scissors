@@ -18,23 +18,23 @@ function playerPlay() {
 
 function round(computerSelect, playerSelect) {
     if (playerSelect == "rock" && computerSelect === 2) {
-        console.log("You win! Rock beats scissors.");
+        return "player";
     } else if (playerSelect == "paper" && computerSelect === 0) {
-        console.log("You win! Paper beats rock.");
+        return "player";
     } else if (playerSelect == "scissors" && computerSelect === 1) {
-        console.log("You win! Scissors beats paper.");
+        return "player";
     } else if (computerSelect === 0 && playerSelect == "scissors") {
-        console.log("You lose. Rock beats scissors.");
+        return "computer";
     } else if (computerSelect === 1 && playerSelect == "rock") {
-        console.log("You lose. Paper beats rock.");
+        return "computer";
     } else if (computerSelect === 2 && playerSelect == "paper") {
-        console.log("You lose. Scissors beats paper.");
+        return "computer";
     } else if (playerSelect == "rock" && computerSelect === 0) {
-        console.log("Tie!");
+        return "tie";
     } else if (playerSelect == "paper" && computerSelect === 1) {
-        console.log("Tie!");
+        return "tie";
     } else if (playerSelect == "scissors" && computerSelect === 2) {
-        console.log("Tie!");
+        return "tie";
     } else {
         console.log("Error.");
     }
@@ -43,4 +43,29 @@ function round(computerSelect, playerSelect) {
 const playerSelect = playerPlay();
 const computerSelect = computerPlay();
 
-round(computerSelect, playerSelect);
+let playerScore = 0
+let computerScore = 0
+
+function game() {
+    let result = round(computerSelect, playerSelect);
+
+    if (result == "player") {
+        playerScore++;
+        console.log("You win this round!");
+    } else if (result == "computer") {
+        computerScore++;
+        console.log("Uh-oh. You've lost.");
+    } else if (result == "tie") {
+        console.log("Tie! Try again.");
+    }
+
+    if (playerScore == 5) {
+        console.log("You've won the game!");
+    } else if (computerScore == 5) {
+        console.log("You've lost the game...");
+    }
+}
+
+for (let i = 0; i < 5; i++) {
+    game();
+}
