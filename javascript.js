@@ -58,10 +58,10 @@ console.log("Results: " + results);
 
 }
 console.log("Final Results: W-"+win+"; L-"+loss+"; T-"+tie+";");
-let finalResult = function(win,loss) {
-if (win > loss) {
+let finalResult = function(win,loss,tie) {
+if (win >= 3) {
     console.log("You win the game!");
-} else if (loss > win) {
+} else if (loss >= 3) {
     console.log("You lose the game...");
 } else {
     console.log("Stalemate! Try again.");
