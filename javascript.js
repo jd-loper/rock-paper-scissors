@@ -88,4 +88,15 @@ function finalResult() {
     finalMessage = "Stalemate!";
   }
   resultsDiv.innerHTML += `<br>${finalMessage}`;
+  restartGame();
+}
+
+function restartGame() {
+  const restartBtn = document.createElement("button");
+  restartBtn.textContent = "Play again?";
+  resultsDiv.appendChild(restartBtn);
+
+  restartBtn.addEventListener("click", () => {
+    location.reload();
+  });
 }
